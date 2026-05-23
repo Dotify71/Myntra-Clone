@@ -1,1 +1,1 @@
-Department tentacles have been created successfully. The Octogent CLI app was used to create the tentacles.
+Department tentacles have been created successfully. The Octogent CLI app was used to create the tentacles. The .claude/hooks/settings.json file has been updated with the new department information.
