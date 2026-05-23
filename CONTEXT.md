@@ -1,1 +1,1 @@
-Department tentacles have been created successfully using the Octogent CLI app.
+Department tentacles have been created successfully. The Octogent CLI app was used to create the tentacles.
