@@ -1,0 +1,1 @@
+Department tentacles have been created successfully using the Octogent CLI app.
