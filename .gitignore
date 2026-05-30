@@ -1,1 +1,31 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment & secrets
+.env
+.env.local
+.env.*
+
+# Python/Backend (keep private)
+api/
+database_models/
+requirements.txt
+setup-frontend.sh
+mainfile.css
+
+# Blackbox/AI files
+.claude
 .octogent
+CONTEXT.md
+
+# Todo/temp files
+todo.md
+todo_fix_workflow.md
+todo_images_update.md
+
+# OS files
+.DS_Store
+*.log
+__pycache__/
+*.pyc

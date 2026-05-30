@@ -1,1 +1,149 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Myntra Store</title><link rel="stylesheet" href="styles.css"></head><body><header><nav><ul><li><a href="#">Home</a></li><li><a href="#">Products</a></li><li><a href="#">Cart</a></li></ul></nav></header><main><section><h1>Welcome to Myntra Store</h1><p>Shop from our wide range of products</p><button>Shop Now</button></section><section><h2>Featured Products</h2><div><img src="product1.jpg" alt="Product 1"><p>Product 1</p><button>Buy Now</button></div><div><img src="product2.jpg" alt="Product 2"><p>Product 2</p><button>Buy Now</button></div></section></main><footer><p>&copy; 2026 Myntra Store</p></footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myntra Clone</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <div class="navbarInner" id="navbarInner">
+        <a class="brand" href="#/home" aria-label="Myntra home">
+          <div class="brandMark">M</div>
+          <div class="brandName">MYNTRA</div>
+        </a>
+
+        <nav class="navLinks" aria-label="Primary">
+          <a href="#/home">MEN</a>
+          <a href="#/products?category=Women">WOMEN</a>
+          <a href="#/products?category=Kids">KIDS</a>
+          <a href="#/products?category=Beauty">BEAUTY</a>
+          <a href="#/products?category=Home%20Appliances">HOME</a>
+        </nav>
+
+        <div class="searchWrap">
+          <span class="searchIcon" aria-hidden="true">🔎</span>
+          <input
+            id="searchInput"
+            class="searchInput"
+            type="text"
+            placeholder="Search for products, brands and more"
+            autocomplete="off"
+          />
+          <button id="searchClear" class="searchClear" type="button" aria-label="Clear search">✕</button>
+          <div id="searchDropdown" class="searchDropdown" role="listbox" aria-label="Search results"></div>
+        </div>
+
+        <div class="navIcons">
+          <a id="wishlistBtn" class="iconBtn" href="#/wishlist" aria-label="Wishlist" onclick="window.location.hash='#/wishlist'; return false;">
+            <span class="iconStack">
+              <span aria-hidden="true">❤️</span>
+              <span class="iconText">Wishlist</span>
+            </span>
+            <span id="wishlistCount" class="badge" aria-label="Wishlist count">0</span>
+          </a>
+
+
+
+
+
+
+
+
+          <a id="cartBtn" class="iconBtn" href="#/cart" aria-label="Cart" onclick="window.location.hash='#/cart'; return false;">
+            <span class="iconStack">
+              <span aria-hidden="true">👜</span>
+              <span class="iconText">Bag</span>
+
+            </span>
+            <span id="cartCount" class="badge" aria-label="Cart count">0</span>
+          </a>
+
+          <div class="profileWrap" id="profileWrap">
+            <button id="authBtn" class="avatarBtn" type="button" aria-label="Profile">
+              <span class="avatarCircle" id="avatarCircle">👤</span>
+              <span class="avatarName" id="avatarName">Login</span>
+            </button>
+            <div id="profileMenu" class="profileMenu" role="menu" aria-label="Profile menu">
+              <div style="padding:10px;font-weight:1000;color:#111" id="profileMenuUser">Hi!</div>
+              <button type="button" id="logoutBtn">Logout</button>
+              <button type="button" id="openAuthModalBtn">Login / Signup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Toasts -->
+  <div class="toastWrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Auth Modal -->
+  <div id="authOverlay" class="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Login and signup">
+      <div class="modalTop">
+        <h3>Welcome to Myntra Clone</h3>
+        <button class="closeX" id="authCloseBtn" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="modalBody">
+        <div class="tabs">
+          <button class="tab active" data-tab="login" type="button">Login</button>
+          <button class="tab" data-tab="signup" type="button">Signup</button>
+        </div>
+
+        <div id="loginForm" class="formGrid">
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="Min 6 characters" required minlength="6" />
+          </div>
+          <div class="formActions">
+            <button type="button" class="linkBtn" id="demoFillLogin">Use demo</button>
+            <button type="button" class="submitBtn" id="loginSubmit">Login</button>
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:var(--muted);font-weight:900" id="loginHint"></div>
+        </div>
+
+        <div id="signupForm" class="formGrid" style="display:none">
+          <div class="field">
+            <label for="signupFirstName">First name</label>
+            <input id="signupFirstName" type="text" placeholder="John" required />
+          </div>
+          <div class="field">
+            <label for="signupLastName">Last name</label>
+            <input id="signupLastName" type="text" placeholder="Doe" required />
+          </div>
+          <div class="field">
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="signupPassword">Password</label>
+            <input id="signupPassword" type="password" placeholder="Min 6 characters" required minlength="6" />
+          </div>
+          <div class="formActions">
+            <button type="button" class="linkBtn" id="demoFillSignup">Use demo</button>
+            <button type="button" class="submitBtn" id="signupSubmit">Signup</button>
+          </div>
+          <div style="margin-top:8px;font-size:12px;color:var(--muted);font-weight:900" id="signupHint"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main views mount point -->
+  <main id="appRoot"></main>
+
+  <!-- Router render boot -->
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
+
