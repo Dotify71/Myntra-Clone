@@ -39,6 +39,10 @@
         </div>
 
         <div class="navIcons">
+
+          <button id="themeToggleBtn" class="iconBtn themeToggleBtn" type="button" aria-label="Toggle dark mode" aria-pressed="false" title="Toggle theme">🌙</button>
+
+
           <a id="wishlistBtn" class="iconBtn" href="#/wishlist" aria-label="Wishlist" onclick="window.location.hash='#/wishlist'; return false;">
             <span class="iconStack">
               <span aria-hidden="true">❤️</span>
@@ -55,6 +59,7 @@
 
 
           <a id="cartBtn" class="iconBtn" href="#/cart" aria-label="Cart" onclick="window.location.hash='#/cart'; return false;">
+
             <span class="iconStack">
               <span aria-hidden="true">👜</span>
               <span class="iconText">Bag</span>
@@ -80,8 +85,12 @@
   </header>
 
 
+  <!-- Top route progress -->
+  <div id="routeProgressBar" aria-hidden="true"></div>
+
   <!-- Toasts -->
   <div class="toastWrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+
 
   <!-- Auth Modal -->
   <div id="authOverlay" class="modalOverlay" aria-hidden="true">
@@ -141,6 +150,10 @@
 
   <!-- Main views mount point -->
   <main id="appRoot"></main>
+
+  <!-- Floating scroll-to-top -->
+  <button id="scrollToTopBtn" type="button" aria-label="Scroll to top" title="Scroll to top">↑</button>
+
 
   <!-- Router render boot -->
   <script type="module" src="./app.js"></script>
