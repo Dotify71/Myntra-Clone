@@ -1,6 +1,6 @@
 # S&W Myntra Clone
 
-A Myntra-inspired fashion e-commerce app built from scratch using plain HTML, CSS, and JavaScript. No frameworks, no build step — just open `index.html` and it works.
+A Myntra-inspired fashion e-commerce app built from scratch using plain HTML, CSS, and JavaScript. No frameworks, no build step — just open `frontend/index.html` and it works.
 
 Built as part of the S&W Hackathon.
 
@@ -45,7 +45,7 @@ python3 -m http.server 3000
 npx serve . -p 3000
 ```
 
-Or use the Live Server extension in VS Code — right-click `index.html` and open with Live Server.
+Or use the Live Server extension in VS Code — right-click `frontend/index.html` and open with Live Server.
 
 Then go to `http://localhost:3000`.
 
@@ -54,7 +54,8 @@ Then go to `http://localhost:3000`.
 ## Project structure
 
 ```
-├── index.html
+├── frontend/
+    ├── index.html
 ├── style.css
 ├── app.js
 ├── router.js
